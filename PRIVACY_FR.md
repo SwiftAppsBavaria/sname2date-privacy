@@ -49,4 +49,4 @@ comptes.
 
 ## Contact
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

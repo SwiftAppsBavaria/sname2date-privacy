@@ -116,4 +116,4 @@ jours dans un fichier texte. N'hésitez pas à le joindre à votre description d
 
 ## Contact
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
