@@ -112,4 +112,4 @@ file. Feel free to send it along with your description of the problem.
 
 ## Contact
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
