@@ -41,4 +41,4 @@ App 看不懂的部分維持原樣。
 
 ## 聯絡方式
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

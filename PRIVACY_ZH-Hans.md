@@ -39,4 +39,4 @@ sName2Date 只读取你明确交给它的文件——通过打开对话框选择
 
 ## 联系方式
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

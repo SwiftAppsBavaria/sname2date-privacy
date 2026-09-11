@@ -113,4 +113,4 @@ um arquivo de texto. Envie-o junto com a descrição do erro.
 
 ## Contato
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net

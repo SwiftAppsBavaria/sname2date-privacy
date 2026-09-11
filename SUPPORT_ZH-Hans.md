@@ -94,4 +94,4 @@ ae/oe/ue 代替变音符号）；这种情况请在该行右侧手动填写日�
 
 ## 联系方式
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net

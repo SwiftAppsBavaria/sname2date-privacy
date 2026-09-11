@@ -44,4 +44,4 @@ sName2Date는 사용자가 명시적으로 건네준 파일만 읽습니다. 열
 
 ## 연락처
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

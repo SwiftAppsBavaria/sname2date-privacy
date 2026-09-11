@@ -99,4 +99,4 @@ sName2Date 會在檔案名稱中尋找日期，並把它當作拍攝日期寫進
 
 ## 聯絡方式
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net

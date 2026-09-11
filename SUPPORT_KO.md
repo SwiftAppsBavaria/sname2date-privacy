@@ -109,4 +109,4 @@ sName2Date는 새로 만들지는 않지만, 촬영 일시를 바꿀 때 이미 
 
 ## 연락처
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net

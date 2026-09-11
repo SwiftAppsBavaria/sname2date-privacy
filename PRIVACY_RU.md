@@ -47,4 +47,4 @@ sName2Date читает те файлы, которые ты ему явно п�
 
 ## Контакт
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

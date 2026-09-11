@@ -111,4 +111,4 @@ sName2Date их не создаёт, но имеющийся обновляет 
 
 ## Контакт
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
