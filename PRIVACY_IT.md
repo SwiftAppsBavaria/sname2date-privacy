@@ -48,4 +48,4 @@ anomali a terzi e non ci sono account.
 
 ## Contatto
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

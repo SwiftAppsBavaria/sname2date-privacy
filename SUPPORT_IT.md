@@ -114,4 +114,4 @@ in un file di testo. Allegalo volentieri alla descrizione dell'errore.
 
 ## Contatto
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
