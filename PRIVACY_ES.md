@@ -47,4 +47,4 @@ No hay publicidad, ni servicios de analítica, ni informes de fallos a terceros,
 
 ## Contacto
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

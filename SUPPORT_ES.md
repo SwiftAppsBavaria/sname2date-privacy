@@ -116,4 +116,4 @@ un archivo de texto. Envíalo junto con la descripción del error.
 
 ## Contacto
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
