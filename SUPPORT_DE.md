@@ -115,4 +115,4 @@ in eine Textdatei. Schick sie gern mit der Fehlerbeschreibung mit.
 
 ## Kontakt
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
