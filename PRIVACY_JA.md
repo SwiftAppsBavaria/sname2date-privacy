@@ -46,4 +46,4 @@ sName2Date は、あなたが明示的に渡したファイルだけを読みま
 
 ## 連絡先
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+Andreas Heiligtag · SwiftAppsBavaria@gmx.net

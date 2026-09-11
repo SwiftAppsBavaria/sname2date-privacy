@@ -112,4 +112,4 @@ macOS はフォルダに対する許可を必要とし、その許可はフォ�
 
 ## 連絡先
 
-Andreas Heiligtag · andreas.heiligtag@gmx.de
+SwiftAppsBavaria · SwiftAppsBavaria@gmx.net
