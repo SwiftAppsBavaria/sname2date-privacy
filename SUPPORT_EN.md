@@ -2,15 +2,19 @@
 
 ## What the app does
 
-sName2Date looks for a date in the file name and writes it into the image or video file as
-the capture date. If there is no capture date yet, it is created.
+sName2Date looks for a date in the file name and writes it into the image, video or audio
+file as the capture date. If there is no capture date yet, it is created.
 
-The full version has **two modes** for this, switched at the top of the window:
+At the top of the window there are two checkboxes for this, and they do not exclude each
+other:
 
 | | |
 |---|---|
-| **Capture Date** | writes the date into the file — the app's main job |
-| **File Names** | only brings the name into ISO notation, for **any** kind of file |
+| **Write date into the file** | puts the date into the file itself as the capture date — the app's main job |
+| **Convert file names** | brings the name into ISO notation, for **every** kind of file |
+
+Both together are the normal case. If only the second one is set, the app opens no file and
+only renames.
 
 ## First steps
 
@@ -56,41 +60,51 @@ No. The image data is taken over unchanged, a JPEG is not recompressed. For vide
 tracks are passed through, nothing is re-encoded.
 
 **Which formats are supported?**
-In *Capture Date* mode: the images JPEG, PNG, TIFF, HEIC and GIF, the videos MP4, MOV and
-M4V. The app writes the date into the file itself for all of these.
+The app writes the capture date into the file itself for images (JPEG, PNG, TIFF, HEIC,
+GIF), videos (MP4, MOV, M4V) and audio recordings (M4A, M4B) — the checkmark in the row is
+then green.
 
-In *File Names* mode **no extension matters** — only the name is changed there, and every
-file has one.
+The list takes **any** file, though. Where the format holds no capture date — a PDF, say, a
+text file or a spreadsheet — the app sets the file's creation and modification date instead;
+the checkmark is then orange. Applications, aliases and package documents do not appear in
+the list.
 
-**My HEIF, WebP or AVI file does not appear in the list at all.**
-These three formats hold no capture date — the app could only park the date beside them
-instead of writing it in, and that is precisely not what it is for. They are therefore
-passed over while loading in *Capture Date* mode; a line above the list says how many there
-were.
-
-They can still be renamed: switch to *File Names* for that.
+**My HEIF, WebP or AVI file has a blue checkmark.**
+These three formats hold no capture date. The app therefore writes it into a sidecar file
+with the same name and the extension `.xmp`, which photo programs such as Lightroom or
+digiKam read as well.
 
 With HEIF the extension is often all it takes: as `.heic` the same data counts as a
-different format and is then written.
+different format and is then written into the file itself.
 
 **I only want to tidy up the file names without touching the files.**
-Switch to *File Names* at the top of the window. The app then opens not a single file and
-changes only the name — `Invoice 15.03.2024.pdf` becomes `2024-03-15 12-00-00 Invoice.pdf`,
-and the folder sorts by date in the Finder. This applies to every kind of file, PDFs, text
-or spreadsheets included.
+At the top of the window, switch "Write date into the file" off and "Convert file names" on.
+The app then opens not a single file and changes only the name and, if switched on in the
+settings, the creation and modification date — `Invoice 15.03.2024.pdf` becomes
+`2024-03-15 12-00-00 Invoice.pdf`, and the folder sorts by date in the Finder. This applies
+to every kind of file, PDFs, text or spreadsheets included.
 
 If you want the date to stay where it stood in the name, switch "Put date first" off.
 
-⚠️ In this mode the app accepts **folders** only, not individual files. The reason is the
-renaming itself: it changes the folder entry, and for that macOS needs permission for the
-folder — which comes about when you select it. Once chosen, the app remembers the folder;
-the "Choose Folder" button lists the most recently used ones in a menu.
+Renaming changes the folder entry, and for that macOS needs permission for the folder. If
+you choose the folder right away in the full version, that grants it. If you selected
+individual files — always the case in sName2Date Lite — the app asks once for the folder; a
+parent folder is enough, and the permission still applies after a restart. In the full
+version, the "Choose Folder" button lists the most recently used ones in a menu.
 
 **There is a file with the extension `.xmp` next to my file.**
-That one comes from another program — Lightroom and digiKam create such sidecars.
-sName2Date creates none, but it carries an existing one along when it changes the capture
-date. Otherwise the file would say one thing and its sidecar another, and most programs
-read the sidecar first.
+Either it comes from another program — Lightroom and digiKam create such sidecars — or
+sName2Date created it because the format does not hold the capture date itself (HEIF, WebP,
+AVI; the checkmark is then blue). ⌘Z takes back a sidecar created this way. The app carries
+an existing one along when it changes the capture date: otherwise the file would say one
+thing and its sidecar another, and most programs read the sidecar first.
+
+**With a large folder, the app asks whether it should keep reading it in.**
+This concerns only the full version; sName2Date Lite does not take folders. From 5,000
+files on — for example with the home folder including its subfolders — it stops and asks.
+While reading in and evaluating, it shows a counter and a progress bar; writing is possible
+only once the list is complete. It goes faster with a smaller folder or without "Include
+subfolders".
 
 **Can I undo a change?**
 Yes. ⌘Z takes back a whole run — capture date, creation and modification date and, if

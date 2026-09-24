@@ -3,14 +3,17 @@
 ## Was die App tut
 
 sName2Date sucht im Dateinamen nach einem Datum und schreibt es als Aufnahmedatum in die
-Bild- oder Filmdatei. Ist noch kein Aufnahmedatum vorhanden, wird es angelegt.
+Bild-, Film- oder Tondatei. Ist noch kein Aufnahmedatum vorhanden, wird es angelegt.
 
-Die Vollversion hat dafür **zwei Betriebsarten**, umschaltbar oben im Fenster:
+Oben im Fenster stehen dafür zwei Haken, die sich nicht ausschließen:
 
 | | |
 |---|---|
-| **Aufnahmedatum** | schreibt das Datum in die Datei — die Hauptaufgabe der App |
-| **Dateinamen** | bringt nur den Namen in die ISO-Schreibweise, für **beliebige** Dateien |
+| **Datum in die Datei schreiben** | legt das Datum als Aufnahmedatum in die Datei selbst — die Hauptaufgabe der App |
+| **Dateinamen umstellen** | bringt den Namen in die ISO-Schreibweise, für **jede** Dateiart |
+
+Beide zusammen sind der Normalfall. Ist nur der zweite gesetzt, öffnet die App keine Datei
+und benennt nur um.
 
 ## Erste Schritte
 
@@ -58,42 +61,52 @@ Nein. Die Bilddaten werden unverändert übernommen, ein JPEG wird nicht neu kom
 Bei Filmen werden die Spuren durchgereicht, es wird nicht neu kodiert.
 
 **Welche Formate werden unterstützt?**
-In der Betriebsart *Aufnahmedatum*: Bilder JPEG, PNG, TIFF, HEIC und GIF, Filme MP4, MOV und
-M4V. In alle diese schreibt die App das Datum in die Datei selbst.
+In die Datei selbst schreibt die App das Aufnahmedatum bei Bildern (JPEG, PNG, TIFF, HEIC,
+GIF), Filmen (MP4, MOV, M4V) und Tonaufnahmen (M4A, M4B) — dann ist der Haken in der Zeile
+grün.
 
-In der Betriebsart *Dateinamen* zählt **keine Endung** — dort wird nur der Name geändert, und
-den hat jede Datei.
+Die Liste nimmt aber **jede** Datei. Wo das Format kein Aufnahmedatum aufnimmt — eine PDF
+etwa, eine Textdatei oder eine Tabelle —, setzt die App stattdessen Erstellungs- und
+Änderungsdatum der Datei; der Haken ist dann orange. Programme, Aliasse und Dokumente im
+Paketformat erscheinen nicht in der Liste.
 
-**Meine HEIF-, WebP- oder AVI-Datei erscheint gar nicht in der Liste.**
-Diese drei Formate nehmen kein Aufnahmedatum auf — die App könnte das Datum dort nur
-danebenlegen, statt es hineinzuschreiben, und genau dafür ist sie nicht da. Sie werden
-deshalb in der Betriebsart *Aufnahmedatum* beim Laden übergangen; eine Zeile über der Liste
-sagt, wie viele es waren.
-
-Umbenennen lassen sie sich trotzdem: dafür auf *Dateinamen* umschalten.
+**Bei meiner HEIF-, WebP- oder AVI-Datei ist der Haken blau.**
+Diese drei Formate nehmen kein Aufnahmedatum auf. Die App schreibt es deshalb in eine
+Begleitdatei mit demselben Namen und der Endung `.xmp`, die Fotoprogramme wie Lightroom oder
+digiKam mitlesen.
 
 Bei HEIF hilft oft schon die Endung: dieselben Daten heißen als `.heic` ein anderes Format
-und werden dann geschrieben.
+und werden dann in die Datei selbst geschrieben.
 
 **Ich möchte nur die Dateinamen aufräumen, ohne die Dateien anzufassen.**
-Oben im Fenster auf *Dateinamen* umschalten. Dann öffnet die App keine einzige Datei und
-ändert nur den Namen — aus `Rechnung 15.03.2024.pdf` wird `2024-03-15 12-00-00 Rechnung.pdf`,
+Oben im Fenster „Datum in die Datei schreiben" ausschalten und „Dateinamen umstellen"
+einschalten. Dann öffnet die App keine einzige Datei und ändert nur den Namen und, falls in
+den Einstellungen eingeschaltet, Erstellungs- und Änderungsdatum — aus `Rechnung 15.03.2024.pdf` wird `2024-03-15 12-00-00 Rechnung.pdf`,
 und der Ordner sortiert im Finder nach Datum. Das gilt für jede Dateiart, auch PDF, Text oder
 Tabellen.
 
 Soll das Datum dort stehen bleiben, wo es im Namen stand, schaltest du „Datum voranstellen"
 aus.
 
-⚠️ In dieser Betriebsart nimmt die App nur **Ordner** entgegen, keine einzelnen Dateien. Der
-Grund ist das Umbenennen selbst: es ändert den Ordnereintrag, und dafür braucht macOS die
-Erlaubnis für den Ordner — die entsteht, indem du ihn auswählst. Einmal gewählt, merkt sich
-die App ihn; der Knopf „Ordner wählen" führt die zuletzt benutzten in einem Menü.
+Umbenennen ändert den Ordnereintrag, und dafür braucht macOS die Erlaubnis für den Ordner.
+Wählst du in der Vollversion gleich den Ordner, ist sie damit erteilt. Hast du einzelne
+Dateien gewählt — in der Lite-Ausgabe immer —, fragt die App einmal nach dem Ordner; ein
+übergeordneter genügt, und die Freigabe gilt auch nach einem Neustart. In der Vollversion
+führt der Knopf „Ordner wählen" die zuletzt benutzten in einem Menü.
 
 **Neben meiner Datei liegt eine Datei mit der Endung `.xmp`.**
-Die stammt von einem anderen Programm — Lightroom und digiKam legen solche Begleiter an.
-sName2Date erzeugt keine, zieht eine vorhandene aber mit, wenn es das Aufnahmedatum ändert.
-Sonst sagte die Datei das eine und ihr Begleiter das andere, und die meisten Programme lesen
-den Begleiter zuerst.
+Entweder stammt sie von einem anderen Programm — Lightroom und digiKam legen solche Begleiter
+an —, oder sName2Date hat sie angelegt, weil das Format das Aufnahmedatum selbst nicht
+aufnimmt (HEIF, WebP, AVI; der Haken ist dann blau). ⌘Z nimmt eine so angelegte wieder
+zurück. Eine vorhandene zieht die App mit, wenn sie das Aufnahmedatum ändert: sonst sagte die
+Datei das eine und ihr Begleiter das andere, und die meisten Programme lesen den Begleiter
+zuerst.
+
+**Bei einem großen Ordner fragt die App, ob sie weiter einlesen soll.**
+Das betrifft nur die Vollversion, die Lite-Ausgabe nimmt keine Ordner. Ab 5 000 Dateien — etwa beim Benutzerordner samt Unterordnern — hält sie an und fragt.
+Während des Einlesens und Auswertens zeigt sie einen Zähler und einen Fortschrittsbalken;
+geschrieben werden kann erst, wenn die Liste vollständig ist. Schneller geht es mit einem
+kleineren Ordner oder ohne „Unterordner einbeziehen".
 
 **Kann ich eine Änderung rückgängig machen?**
 Ja. ⌘Z nimmt einen ganzen Durchgang zurück — Aufnahmedatum, Erstellungs- und Änderungsdatum

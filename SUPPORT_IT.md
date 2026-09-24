@@ -3,14 +3,17 @@
 ## Che cosa fa l'app
 
 sName2Date cerca una data nel nome del file e la scrive come data di scatto nel file di
-immagine o di filmato. Se non è ancora presente una data di scatto, viene creata.
+immagine, di filmato o audio. Se non è ancora presente una data di scatto, viene creata.
 
-La versione completa ha per questo **due modalità**, commutabili in alto nella finestra:
+In alto nella finestra ci sono per questo due caselle, che non si escludono a vicenda:
 
 | | |
 |---|---|
-| **Data di scatto** | scrive la data nel file — il compito principale dell'app |
-| **Nomi dei file** | porta soltanto il nome nella notazione ISO, per file **di qualsiasi tipo** |
+| **Scrivi la data nel file** | mette la data come data di scatto nel file stesso — il compito principale dell'app |
+| **Converti i nomi dei file** | porta il nome nella notazione ISO, per file **di qualsiasi tipo** |
+
+Le due insieme sono il caso normale. Se è attiva solo la seconda, l'app non apre alcun file e
+si limita a rinominare.
 
 ## Primi passi
 
@@ -58,41 +61,52 @@ No. I dati dell'immagine vengono ripresi invariati, un JPEG non viene ricompress
 filmati le tracce vengono trasferite così come sono, non si ricodifica nulla.
 
 **Quali formati sono supportati?**
-Nella modalità *Data di scatto*: come immagini JPEG, PNG, TIFF, HEIC e GIF, come filmati
-MP4, MOV e M4V. In tutti questi l'app scrive la data nel file stesso.
+L'app scrive la data di scatto nel file stesso per le immagini (JPEG, PNG, TIFF, HEIC, GIF),
+i filmati (MP4, MOV, M4V) e le registrazioni audio (M4A, M4B) — il segno di spunta nella riga
+è allora verde.
 
-Nella modalità *Nomi dei file* **non conta nessuna estensione** — lì viene modificato solo il
-nome, e quello ce l'ha ogni file.
+L'elenco accetta però **qualsiasi** file. Dove il formato non accoglie alcuna data di
+scatto — un PDF per esempio, un file di testo o una tabella —, l'app imposta invece la data di
+creazione e di modifica del file; il segno di spunta è allora arancione. Applicazioni, alias
+e documenti in formato pacchetto non compaiono nell'elenco.
 
-**Il mio file HEIF, WebP o AVI non compare affatto nell'elenco.**
-Questi tre formati non accolgono alcuna data di scatto — l'app potrebbe solo mettere la data
-accanto al file, invece di scriverla al suo interno, e non è esattamente per questo che
-esiste. Vengono perciò ignorati al caricamento nella modalità *Data di scatto*; una riga
-sopra l'elenco dice quanti erano.
-
-Rinominarli è comunque possibile: per farlo passa a *Nomi dei file*.
+**Per il mio file HEIF, WebP o AVI il segno di spunta è blu.**
+Questi tre formati non accolgono alcuna data di scatto. L'app la scrive perciò in un file di
+accompagnamento con lo stesso nome e l'estensione `.xmp`, che i programmi di fotografia come
+Lightroom o digiKam leggono insieme al file.
 
 Con HEIF spesso basta già l'estensione: gli stessi dati con `.heic` sono un altro formato e
-vengono allora scritti.
+vengono allora scritti nel file stesso.
 
 **Vorrei solo mettere in ordine i nomi dei file, senza toccare i file.**
-Passa a *Nomi dei file* in alto nella finestra. Allora l'app non apre nemmeno un file e
-modifica solo il nome — da `Fattura 15.03.2024.pdf` nasce `2024-03-15 12-00-00 Fattura.pdf`,
-e la cartella si ordina per data nel Finder. Questo vale per ogni tipo di file, anche PDF,
-testi o tabelle.
+In alto nella finestra disattiva «Scrivi la data nel file» e attiva «Converti i nomi dei
+file». Allora l'app non apre nemmeno un file e modifica solo il nome e, se attivato nelle
+impostazioni, la data di creazione e di modifica — da `Fattura 15.03.2024.pdf` nasce
+`2024-03-15 12-00-00 Fattura.pdf`, e la cartella si ordina per data nel Finder. Questo vale
+per ogni tipo di file, anche PDF, testi o tabelle.
 
 Se la data deve restare là dove si trovava nel nome, disattiva «Data all'inizio».
 
-⚠️ In questa modalità l'app accetta soltanto **cartelle**, non singoli file. Il motivo è il
-rinominare stesso: modifica la voce nella cartella, e per questo macOS richiede il permesso
-per la cartella — che nasce dal fatto che tu la selezioni. Una volta scelta, l'app se la
-ricorda; il pulsante «Scegli cartella» elenca in un menu quelle usate per ultime.
+Rinominare modifica la voce nella cartella, e per questo macOS richiede il permesso per la
+cartella. Se nella versione completa scegli subito la cartella, il permesso è concesso così.
+Se hai scelto singoli file — in sName2Date Lite sempre —, l'app chiede una sola volta la
+cartella; ne basta una di livello superiore, e il permesso vale anche dopo un riavvio. Nella
+versione completa il pulsante «Scegli cartella» elenca in un menu quelle usate per ultime.
 
 **Accanto al mio file si trova un file con estensione `.xmp`.**
-Proviene da un altro programma — Lightroom e digiKam creano simili file di accompagnamento.
-sName2Date non ne crea, ma trascina con sé quello esistente quando modifica la data di
-scatto. Altrimenti il file direbbe una cosa e il suo accompagnatore un'altra, e la maggior
-parte dei programmi legge per prima l'accompagnatore.
+O proviene da un altro programma — Lightroom e digiKam creano simili file di
+accompagnamento —, oppure l'ha creato sName2Date perché il formato non accoglie da sé la data
+di scatto (HEIF, WebP, AVI; il segno di spunta è allora blu). ⌘Z rimuove un file di
+accompagnamento creato in questo modo. L'app trascina con sé quello esistente quando modifica
+la data di scatto: altrimenti il file direbbe una cosa e il suo accompagnatore un'altra, e la
+maggior parte dei programmi legge per prima l'accompagnatore.
+
+**Con una cartella grande l'app chiede se continuare a leggere.**
+Riguarda solo la versione completa: sName2Date Lite non accetta cartelle. A partire da
+5000 file — per esempio con la cartella utente e le sue sottocartelle — si ferma e chiede.
+Durante la lettura e l'analisi mostra un contatore e una barra di avanzamento; si può
+scrivere solo quando l'elenco è completo. Si fa prima con una cartella più piccola o senza
+«Includi le sottocartelle».
 
 **Posso annullare una modifica?**
 Sì. ⌘Z ritira un'intera esecuzione — data di scatto, data di creazione e di modifica e, se

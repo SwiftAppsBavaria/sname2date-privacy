@@ -3,14 +3,18 @@
 ## Ce que fait l'app
 
 sName2Date cherche une date dans le nom de fichier et l'écrit comme date de prise de vue dans
-le fichier image ou vidéo. S'il n'y a pas encore de date de prise de vue, elle est créée.
+le fichier image, vidéo ou audio. S'il n'y a pas encore de date de prise de vue, elle est
+créée.
 
-La version complète dispose pour cela de **deux modes**, commutables en haut de la fenêtre :
+En haut de la fenêtre figurent pour cela deux cases à cocher, qui ne s'excluent pas :
 
 | | |
 |---|---|
-| **Date de prise de vue** | écrit la date dans le fichier — la tâche principale de l'app |
-| **Noms de fichiers** | met seulement le nom à l'écriture ISO, pour **tout** fichier |
+| **Écrire la date dans le fichier** | place la date comme date de prise de vue dans le fichier lui-même — la tâche principale de l'app |
+| **Convertir les noms de fichiers** | met le nom à l'écriture ISO, pour **tout** type de fichier |
+
+Les deux ensemble constituent le cas normal. Si seule la seconde est cochée, l'app n'ouvre
+aucun fichier et se contente de renommer.
 
 ## Premiers pas
 
@@ -57,43 +61,55 @@ Non. Les données d'image sont reprises telles quelles, un JPEG n'est pas recomp
 films, les pistes sont transmises telles quelles, il n'y a pas de réencodage.
 
 **Quels formats sont pris en charge ?**
-Dans le mode *Date de prise de vue* : les images JPEG, PNG, TIFF, HEIC et GIF, les films MP4,
-MOV et M4V. Dans tous ces formats, l'app écrit la date dans le fichier lui-même.
+L'app écrit la date de prise de vue dans le fichier lui-même pour les images (JPEG, PNG, TIFF,
+HEIC, GIF), les films (MP4, MOV, M4V) et les enregistrements audio (M4A, M4B) — la coche de la
+ligne est alors verte.
 
-Dans le mode *Noms de fichiers*, **aucune extension ne compte** — seul le nom y est modifié,
-et tout fichier en possède un.
+La liste accepte toutefois **tout** fichier. Lorsque le format n'accueille pas de date de
+prise de vue — un PDF par exemple, un fichier texte ou un tableur —, l'app règle à la place la
+date de création et de modification du fichier ; la coche est alors orange. Les
+applications, les alias et les documents au format paquet n'apparaissent pas dans la liste.
 
-**Mon fichier HEIF, WebP ou AVI n'apparaît pas du tout dans la liste.**
-Ces trois formats n'accueillent pas de date de prise de vue — l'app ne pourrait qu'y déposer
-la date à côté au lieu de l'écrire dedans, et ce n'est précisément pas sa raison d'être. Ils
-sont donc ignorés au chargement dans le mode *Date de prise de vue* ; une ligne au-dessus de
-la liste indique combien il y en avait.
-
-Ils peuvent malgré tout être renommés : basculez pour cela sur *Noms de fichiers*.
+**Pour mon fichier HEIF, WebP ou AVI, la coche est bleue.**
+Ces trois formats n'accueillent pas de date de prise de vue. L'app l'écrit donc dans un
+fichier annexe portant le même nom et l'extension `.xmp`, que les programmes photo comme
+Lightroom ou digiKam lisent également.
 
 Pour HEIF, l'extension suffit souvent : les mêmes données portent, sous `.heic`, le nom d'un
-autre format et sont alors écrites.
+autre format et sont alors écrites dans le fichier lui-même.
 
 **Je souhaite seulement mettre de l'ordre dans les noms de fichiers, sans toucher aux
 fichiers.**
-Basculez en haut de la fenêtre sur *Noms de fichiers*. L'app n'ouvre alors aucun fichier et
-ne modifie que le nom — `Facture 15.03.2024.pdf` devient `2024-03-15 12-00-00 Facture.pdf`,
-et le dossier se trie par date dans le Finder. Cela vaut pour tout type de fichier, y compris
-PDF, texte ou tableurs.
+En haut de la fenêtre, désactivez « Écrire la date dans le fichier » et activez « Convertir
+les noms de fichiers ». L'app n'ouvre alors aucun fichier et ne modifie que le nom et, si
+l'option est activée dans les réglages, la date de création et de modification —
+`Facture 15.03.2024.pdf` devient `2024-03-15 12-00-00 Facture.pdf`, et le dossier se trie par
+date dans le Finder. Cela vaut pour tout type de fichier, y compris PDF, texte ou tableurs.
 
 Si la date doit rester là où elle figurait dans le nom, désactivez « Date au début ».
 
-⚠️ Dans ce mode, l'app n'accepte que des **dossiers**, pas des fichiers isolés. La raison
-tient au renommage lui-même : il modifie l'entrée du dossier, et macOS exige pour cela
-l'autorisation portant sur le dossier — elle naît du fait que vous le sélectionnez. Une fois
-choisi, l'app le retient ; le bouton « Choisir un dossier » présente les derniers utilisés
-dans un menu.
+Le renommage modifie l'entrée du dossier, et macOS exige pour cela l'autorisation portant sur
+le dossier. Si, dans la version complète, vous choisissez directement le dossier, elle est
+ainsi accordée. Si vous avez choisi des fichiers isolés — toujours le cas dans
+sName2Date Lite —, l'app demande une seule fois le dossier ; un dossier parent suffit, et
+l'autorisation vaut aussi après un redémarrage. Dans la version complète, le bouton
+« Choisir un dossier » présente les derniers utilisés dans un menu.
 
 **À côté de mon fichier se trouve un fichier portant l'extension `.xmp`.**
-Il provient d'un autre programme — Lightroom et digiKam créent de tels fichiers annexes.
-sName2Date n'en crée aucun, mais entraîne celui qui existe lorsqu'elle modifie la date de
-prise de vue. Sinon le fichier dirait une chose et son annexe une autre, et la plupart des
-programmes lisent l'annexe en premier.
+Soit il provient d'un autre programme — Lightroom et digiKam créent de tels fichiers
+annexes —, soit sName2Date l'a créé parce que le format n'accueille pas lui-même la date de
+prise de vue (HEIF, WebP, AVI ; la coche est alors bleue). ⌘Z supprime une annexe ainsi
+créée. L'app entraîne celle qui existe lorsqu'elle modifie la date de prise de vue : sinon le
+fichier dirait une chose et son annexe une autre, et la plupart des programmes lisent
+l'annexe en premier.
+
+**Pour un grand dossier, l'app demande si elle doit poursuivre la lecture.**
+Cela ne concerne que la version complète : sName2Date Lite n'accepte pas de dossiers.
+À partir de 5 000 fichiers — par exemple pour le dossier de l'utilisateur avec ses
+sous-dossiers —, elle s'arrête et pose la question. Pendant la lecture et l'analyse, elle
+affiche un compteur et une barre de progression ; l'écriture n'est possible qu'une fois la
+liste complète. C'est plus rapide avec un dossier plus petit ou sans « Inclure les
+sous-dossiers ».
 
 **Puis-je annuler une modification ?**
 Oui. ⌘Z annule tout un passage — date de prise de vue, date de création et de modification

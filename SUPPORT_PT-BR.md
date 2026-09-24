@@ -3,14 +3,17 @@
 ## O que o aplicativo faz
 
 O sName2Date procura uma data no nome do arquivo e a grava como data de captura no arquivo
-de imagem ou de filme. Se ainda não houver data de captura, ela é criada.
+de imagem, de filme ou de áudio. Se ainda não houver data de captura, ela é criada.
 
-Para isso, a versão completa tem **dois modos**, alternáveis no alto da janela:
+Para isso, há no alto da janela duas caixas de seleção, que não se excluem:
 
 | | |
 |---|---|
-| **Data de captura** | grava a data no arquivo — a tarefa principal do aplicativo |
-| **Nomes de arquivo** | apenas coloca o nome na grafia ISO, para arquivos de **qualquer** tipo |
+| **Gravar a data no arquivo** | grava a data como data de captura dentro do próprio arquivo — a tarefa principal do aplicativo |
+| **Converter os nomes de arquivo** | coloca o nome na grafia ISO, para arquivos de **qualquer** tipo |
+
+As duas juntas são o caso normal. Se só a segunda estiver marcada, o aplicativo não abre
+nenhum arquivo e apenas renomeia.
 
 ## Primeiros passos
 
@@ -57,41 +60,52 @@ Não. Os dados de imagem são transferidos sem alteração, um JPEG não é comp
 Em filmes, as faixas são repassadas, sem nova codificação.
 
 **Quais formatos são compatíveis?**
-No modo *Data de captura*: as imagens JPEG, PNG, TIFF, HEIC e GIF, e os filmes MP4, MOV e
-M4V. Em todos eles o aplicativo grava a data dentro do próprio arquivo.
+Dentro do próprio arquivo, o aplicativo grava a data de captura em imagens (JPEG, PNG, TIFF,
+HEIC, GIF), filmes (MP4, MOV, M4V) e gravações de áudio (M4A, M4B) — aí a marca na linha fica
+verde.
 
-No modo *Nomes de arquivo*, **nenhuma extensão importa** — ali só o nome é alterado, e nome
-todo arquivo tem.
+Mas a lista aceita **qualquer** arquivo. Quando o formato não aceita data de captura — um
+PDF, por exemplo, um arquivo de texto ou uma planilha —, o aplicativo define em vez disso a
+data de criação e de modificação do arquivo; a marca fica então laranja. Aplicativos, aliases
+e documentos em formato de pacote não aparecem na lista.
 
-**Meu arquivo HEIF, WebP ou AVI nem aparece na lista.**
-Esses três formatos não aceitam data de captura — o aplicativo só poderia deixar a data ao
-lado deles, em vez de gravá-la dentro, e não é para isso que ele existe. Por isso eles são
-ignorados no carregamento, no modo *Data de captura*; uma linha acima da lista informa
-quantos eram.
-
-Renomeá-los, ainda assim, é possível: para isso, mude para *Nomes de arquivo*.
+**Com meu arquivo HEIF, WebP ou AVI, a marca fica azul.**
+Esses três formatos não aceitam data de captura. Por isso o aplicativo a grava em um arquivo
+acompanhante com o mesmo nome e a extensão `.xmp`, que programas de fotos como Lightroom ou
+digiKam também leem.
 
 Com HEIF, muitas vezes a extensão já resolve: os mesmos dados, como `.heic`, são outro
-formato, e aí a gravação acontece.
+formato, e aí a data é gravada dentro do próprio arquivo.
 
 **Quero apenas organizar os nomes de arquivo, sem tocar nos arquivos.**
-Mude para *Nomes de arquivo*, no alto da janela. Aí o aplicativo não abre nenhum arquivo e
-altera só o nome — `Fatura 15.03.2024.pdf` vira `2024-03-15 12-00-00 Fatura.pdf`, e a pasta
-passa a ser ordenada por data no Finder. Isso vale para qualquer tipo de arquivo, também PDF,
-texto ou planilhas.
+No alto da janela, desmarque “Gravar a data no arquivo” e marque “Converter os nomes de
+arquivo”. Aí o aplicativo não abre nenhum arquivo e altera só o nome e, se estiver ativado
+nas configurações, a data de criação e de modificação — `Fatura 15.03.2024.pdf` vira
+`2024-03-15 12-00-00 Fatura.pdf`, e a pasta passa a ser ordenada por data no Finder. Isso vale
+para qualquer tipo de arquivo, também PDF, texto ou planilhas.
 
 Se a data deve permanecer onde estava no nome, desligue “Data no início”.
 
-⚠️ Nesse modo o aplicativo aceita apenas **pastas**, não arquivos avulsos. O motivo é o
-próprio renomear: ele altera a entrada da pasta, e para isso o macOS exige a permissão para a
-pasta — que surge quando você a seleciona. Uma vez escolhida, o aplicativo a guarda; o botão
-“Escolher pasta” traz as últimas utilizadas em um menu.
+Renomear altera a entrada da pasta, e para isso o macOS exige a permissão para a pasta. Se
+você escolher a pasta logo de início na versão completa, ela já está concedida. Se você
+escolheu arquivos avulsos — no sName2Date Lite, sempre —, o aplicativo pergunta uma vez pela
+pasta; uma pasta superior basta, e a liberação vale também depois de reiniciar. Na versão
+completa, o botão “Escolher pasta” traz as últimas utilizadas em um menu.
 
 **Ao lado do meu arquivo há um arquivo com a extensão `.xmp`.**
-Ele vem de outro programa — Lightroom e digiKam criam esses acompanhantes. O sName2Date não
-cria nenhum, mas atualiza um já existente quando altera a data de captura. Do contrário, o
+Ou ele vem de outro programa — Lightroom e digiKam criam esses acompanhantes —, ou o
+sName2Date o criou porque o formato não aceita a data de captura dentro de si (HEIF, WebP,
+AVI; a marca fica então azul). ⌘Z desfaz também um acompanhante criado assim. Um já
+existente é atualizado pelo aplicativo quando ele altera a data de captura: do contrário, o
 arquivo diria uma coisa e o acompanhante outra, e a maioria dos programas lê o acompanhante
 primeiro.
+
+**Com uma pasta grande, o aplicativo pergunta se deve continuar a leitura.**
+Isso vale só para a versão completa; o sName2Date Lite não aceita pastas. A partir de
+5 000 arquivos — por exemplo, com a pasta de usuário e as subpastas — ele para e pergunta.
+Durante a leitura e a análise, mostra um contador e uma barra de progresso; só é possível
+gravar quando a lista estiver completa. Fica mais rápido com uma pasta menor ou sem
+“Incluir subpastas”.
 
 **Posso desfazer uma alteração?**
 Sim. ⌘Z desfaz uma execução inteira — data de captura, data de criação e de modificação e,
