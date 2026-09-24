@@ -1,6 +1,6 @@
 # Informativa sulla privacy di sName2Date
 
-Aggiornamento: 2026-08-22
+Aggiornamento: 2026-09-24
 
 ## In breve
 
@@ -13,15 +13,22 @@ sName2Date legge i file che le consegni espressamente — selezionandoli nella f
 dialogo di apertura oppure trascinandoli sulla finestra. Vengono letti il nome del file e i
 metadati del file; la data di scatto viene scritta esattamente in questi file.
 
-Su richiesta l'app rinomina inoltre questi file e ne imposta la data di creazione e di
-modifica. Entrambe le funzioni sono disattivate per impostazione predefinita e vanno
-attivate espressamente.
+Su richiesta l'app rinomina inoltre questi file (disattivato per impostazione predefinita).
+Ne imposta anche la data di creazione e di modifica (attivato per impostazione predefinita,
+disattivabile nelle Impostazioni). Per i file che non possono contenere una data di scatto —
+ad esempio PDF o testo —, imposta invece sempre soltanto queste due date.
 
-Nella modalità **Nomi dei file** l'app **non apre nemmeno un file**: legge soltanto il nome
-e modifica soltanto il nome. Il contenuto non viene né letto né scritto.
+Se la casella **Scrivi la data nel file** è disattivata, l'app **non apre nemmeno un file**:
+legge soltanto il nome e modifica soltanto il nome e, se impostato, la data di creazione e
+di modifica. Il contenuto non viene né letto né scritto.
 
 Senza la tua selezione l'app non accede ad alcun file. macOS lo impone attraverso la sandbox
 dell'app.
+
+Se l'app esamina una cartella in cui si trova la cartella «Musica», macOS può chiedere se
+può accedere a «Libreria e Apple Music». L'app non legge né la tua libreria né la tua
+cronologia di ascolto. Lì, come ovunque, lavora soltanto con i file e scrive la data nei
+file audio e video il cui nome ne contiene una.
 
 ## Che cosa l'app deposita sul tuo Mac
 
@@ -36,10 +43,14 @@ dell'app.
 
 Tutto questo viene rimosso insieme all'app quando la elimini.
 
-**Accanto ai tuoi file l'app non crea nulla di nuovo.** Se lì si trova già un file di
-accompagnamento con estensione `.xmp` — proviene allora da un altro programma per immagini
-—, la sua data di scatto viene aggiornata insieme, affinché il file e il suo accompagnatore
-non dicano cose diverse. Ciò che l'app non comprende al suo interno resta intatto.
+**Accanto ai tuoi file l'app crea qualcosa in un solo caso:** se un file di foto, video o
+audio non può contenere da sé la data di scatto (ad esempio HEIF, WebP o AVI), l'app la
+scrive in un file di accompagnamento con lo stesso nome e con estensione `.xmp`, che anche
+molti programmi per foto leggono. ⌘Z lo annulla. Accanto ad altri file, ad esempio PDF o
+testo, non ne nasce mai uno. Se lì si trova già un file di accompagnamento — proviene allora
+da un altro programma per immagini —, la sua data di scatto viene aggiornata insieme,
+affinché il file e il suo accompagnatore non dicano cose diverse. Ciò che l'app non
+comprende al suo interno resta intatto.
 
 ## Nessuna trasmissione, nessuna analisi
 
