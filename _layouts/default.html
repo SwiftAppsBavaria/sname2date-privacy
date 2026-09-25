@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.title | default: "sName2Date" }} — sName2Date</title>
+<title>{% if page.title contains "sName2Date" %}{{ page.title }}{% elsif page.title %}{{ page.title }} — sName2Date{% else %}sName2Date{% endif %}</title>
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="https://swiftappsbavaria.github.io/assets/style.css">
 </head>
