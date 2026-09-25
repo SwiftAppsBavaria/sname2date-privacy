@@ -104,7 +104,7 @@ fichier dirait une chose et son annexe une autre, et la plupart des programmes l
 l'annexe en premier.
 
 **Pour un grand dossier, l'app demande si elle doit poursuivre la lecture.**
-Cela ne concerne que la version complète : sName2Date Lite n'accepte pas de dossiers.
+Des dossiers entiers d'un coup, c'est la version complète qui les lit.
 À partir de 5 000 fichiers — par exemple pour le dossier de l'utilisateur avec ses
 sous-dossiers —, elle s'arrête et pose la question. Pendant la lecture et l'analyse, elle
 affiche un compteur et une barre de progression ; l'écriture n'est possible qu'une fois la

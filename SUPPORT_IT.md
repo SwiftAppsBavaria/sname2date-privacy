@@ -102,7 +102,7 @@ la data di scatto: altrimenti il file direbbe una cosa e il suo accompagnatore u
 maggior parte dei programmi legge per prima l'accompagnatore.
 
 **Con una cartella grande l'app chiede se continuare a leggere.**
-Riguarda solo la versione completa: sName2Date Lite non accetta cartelle. A partire da
+Intere cartelle in una volta le legge la versione completa. A partire da
 5000 file — per esempio con la cartella utente e le sue sottocartelle — si ferma e chiede.
 Durante la lettura e l'analisi mostra un contatore e una barra di avanzamento; si può
 scrivere solo quando l'elenco è completo. Si fa prima con una cartella più piccola o senza

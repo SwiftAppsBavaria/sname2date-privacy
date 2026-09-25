@@ -103,7 +103,7 @@ Datei das eine und ihr Begleiter das andere, und die meisten Programme lesen den
 zuerst.
 
 **Bei einem großen Ordner fragt die App, ob sie weiter einlesen soll.**
-Das betrifft nur die Vollversion, die Lite-Ausgabe nimmt keine Ordner. Ab 5 000 Dateien — etwa beim Benutzerordner samt Unterordnern — hält sie an und fragt.
+Ganze Ordner auf einmal liest die Vollversion ein. Ab 5 000 Dateien — etwa beim Benutzerordner samt Unterordnern — hält sie an und fragt.
 Während des Einlesens und Auswertens zeigt sie einen Zähler und einen Fortschrittsbalken;
 geschrieben werden kann erst, wenn die Liste vollständig ist. Schneller geht es mit einem
 kleineren Ordner oder ohne „Unterordner einbeziehen".

@@ -1,6 +1,8 @@
 # Datenschutzerklärung für sName2Date
 
-Stand: 2026-09-24
+Stand: 2026-09-25
+
+Diese Erklärung gilt für sName2Date und für sName2Date Lite.
 
 ## Kurzfassung
 

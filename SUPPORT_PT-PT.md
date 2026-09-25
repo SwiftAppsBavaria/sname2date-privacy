@@ -102,7 +102,7 @@ o ficheiro diria uma coisa e o seu acompanhante outra, e a maioria dos programas
 o acompanhante.
 
 **Numa pasta grande, a aplicação pergunta se deve continuar a leitura.**
-Isto diz respeito apenas à versão completa; o sName2Date Lite não aceita pastas. A partir
+Pastas inteiras de uma só vez são lidas pela versão completa. A partir
 de 5 000 ficheiros — por exemplo, na pasta de utilizador com as subpastas — faz uma pausa e
 pergunta. Durante a leitura e a análise, mostra um contador e uma barra de progresso; só é
 possível escrever quando a lista estiver completa. É mais rápido com uma pasta mais pequena

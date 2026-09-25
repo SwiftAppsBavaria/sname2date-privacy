@@ -1,6 +1,8 @@
 # Informativa sulla privacy di sName2Date
 
-Aggiornamento: 2026-09-24
+Aggiornamento: 2026-09-25
+
+Questa informativa si applica sia a sName2Date sia a sName2Date Lite.
 
 ## In breve
 

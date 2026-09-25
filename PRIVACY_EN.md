@@ -1,6 +1,8 @@
 # Privacy Policy for sName2Date
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
+
+This policy applies to both sName2Date and sName2Date Lite.
 
 ## In brief
 

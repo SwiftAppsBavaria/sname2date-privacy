@@ -100,7 +100,7 @@ an existing one along when it changes the capture date: otherwise the file would
 thing and its sidecar another, and most programs read the sidecar first.
 
 **With a large folder, the app asks whether it should keep reading it in.**
-This concerns only the full version; sName2Date Lite does not take folders. From 5,000
+Whole folders at once are read by the full version. From 5,000
 files on — for example with the home folder including its subfolders — it stops and asks.
 While reading in and evaluating, it shows a counter and a progress bar; writing is possible
 only once the list is complete. It goes faster with a smaller folder or without "Include

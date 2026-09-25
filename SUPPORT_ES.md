@@ -102,7 +102,7 @@ actualiza el existente cuando cambia la fecha de captura: de lo contrario, el ar
 una cosa y su acompañante otra, y la mayoría de los programas leen primero el acompañante.
 
 **En una carpeta grande, la app pregunta si debe seguir leyendo.**
-Esto solo afecta a la versión completa; sName2Date Lite no admite carpetas. A partir de
+Carpetas enteras de una vez las lee la versión completa. A partir de
 5000 archivos (por ejemplo, con la carpeta de usuario y sus subcarpetas) se detiene y
 pregunta. Mientras lee y analiza, muestra un contador y una barra de progreso; solo se puede
 escribir cuando la lista está completa. Va más rápido con una carpeta más pequeña o sin
