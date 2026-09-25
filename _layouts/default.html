@@ -1,0 +1,29 @@
+<!doctype html>
+{% assign code = page.name | remove: ".md" | split: "_" | last %}{% assign lang = "en" %}{% assign slug = "" %}
+{% case code %}{% when "EN" %}{% assign lang = "en" %}{% assign slug = "" %}{% when "DE" %}{% assign lang = "de" %}{% assign slug = "de/" %}{% when "ES" %}{% assign lang = "es" %}{% assign slug = "es/" %}{% when "FR" %}{% assign lang = "fr" %}{% assign slug = "fr/" %}{% when "IT" %}{% assign lang = "it" %}{% assign slug = "it/" %}{% when "JA" %}{% assign lang = "ja" %}{% assign slug = "ja/" %}{% when "KO" %}{% assign lang = "ko" %}{% assign slug = "ko/" %}{% when "PT-BR" %}{% assign lang = "pt-BR" %}{% assign slug = "pt-br/" %}{% when "PT-PT" %}{% assign lang = "pt-PT" %}{% assign slug = "pt-pt/" %}{% when "RU" %}{% assign lang = "ru" %}{% assign slug = "ru/" %}{% when "ZH-Hans" %}{% assign lang = "zh-Hans" %}{% assign slug = "zh-hans/" %}{% when "ZH-Hant" %}{% assign lang = "zh-Hant" %}{% assign slug = "zh-hant/" %}{% endcase %}
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | default: "sName2Date" }} — sName2Date</title>
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="https://swiftappsbavaria.github.io/assets/style.css">
+</head>
+<body>
+<!-- Erzeugt von _Shared/tools/website/pages.py — nicht von Hand ändern, sondern dort. -->
+<header class="site"><div class="wrap">
+  <a class="brand" href="https://swiftappsbavaria.github.io/{{ slug }}">SwiftAppsBavaria</a>
+  <nav><a href="https://swiftappsbavaria.github.io/{{ slug }}#apps">{% case code %}{% when "EN" %}Apps{% when "DE" %}Apps{% when "ES" %}Apps{% when "FR" %}Apps{% when "IT" %}App{% when "JA" %}アプリ{% when "KO" %}앱{% when "PT-BR" %}Apps{% when "PT-PT" %}Apps{% when "RU" %}Приложения{% when "ZH-Hans" %}App{% when "ZH-Hant" %}App{% else %}Apps{% endcase %}</a></nav>
+</div></header>
+<main class="wrap">
+  <article class="hilfe">
+{{ content }}
+  </article>
+  <p class="zurueck"><a href="https://swiftappsbavaria.github.io/{{ slug }}sname2date/">sName2Date</a> · <a href="https://swiftappsbavaria.github.io/{{ slug }}sname2date/help/">{% case code %}{% when "EN" %}Read the full manual →{% when "DE" %}Das ganze Handbuch lesen →{% when "ES" %}Leer el manual completo →{% when "FR" %}Lire le manuel complet →{% when "IT" %}Leggi il manuale completo →{% when "JA" %}マニュアルをすべて読む →{% when "KO" %}전체 설명서 읽기 →{% when "PT-BR" %}Ler o manual completo →{% when "PT-PT" %}Ler o manual completo →{% when "RU" %}Читать полное руководство →{% when "ZH-Hans" %}阅读完整手册 →{% when "ZH-Hant" %}閱讀完整手冊 →{% else %}Read the full manual →{% endcase %}</a></p>
+</main>
+<footer class="site"><div class="wrap">
+  <a href="https://swiftappsbavaria.github.io/impressum.html">{% case code %}{% when "EN" %}Legal Notice{% when "DE" %}Impressum{% when "ES" %}Aviso legal{% when "FR" %}Mentions légales{% when "IT" %}Note legali{% when "JA" %}運営者情報{% when "KO" %}법적 고지{% when "PT-BR" %}Aviso legal{% when "PT-PT" %}Aviso legal{% when "RU" %}Правовая информация{% when "ZH-Hans" %}法律声明{% when "ZH-Hant" %}法律聲明{% else %}Legal Notice{% endcase %}</a><a href="https://swiftappsbavaria.github.io/privacy.html">{% case code %}{% when "EN" %}Website Privacy{% when "DE" %}Datenschutz der Website{% when "ES" %}Privacidad del sitio web{% when "FR" %}Confidentialité du site{% when "IT" %}Privacy del sito{% when "JA" %}ウェブサイトのプライバシー{% when "KO" %}웹사이트 개인정보 보호{% when "PT-BR" %}Privacidade do site{% when "PT-PT" %}Privacidade do site{% when "RU" %}Конфиденциальность сайта{% when "ZH-Hans" %}网站隐私{% when "ZH-Hant" %}網站隱私權{% else %}Website Privacy{% endcase %}</a>
+  <p>Copyright © 2026 SwiftAppsBavaria, Andreas Heiligtag. Mac, macOS and Mac App Store are trademarks of Apple Inc.</p>
+</div></footer>
+</body>
+</html>
